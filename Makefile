@@ -1,27 +1,21 @@
-OPTS		:= -std=c++11 -fobjc-arc
-FRAMEWORKS	:= -framework Cocoa -framework Webkit
-LIBS		:= -lc++
-TARGET		:= dashboard
-WRAPPER		:= xcrun -r
+CFLAGS         := -fobjc-arc
+LDFLAGS        := -framework Cocoa -framework Webkit
+TARGET         := physdash
 
-all: $(TARGET)
+all: $(TARGET).app
 	@echo "Compilation successful"
-
-$(TARGET): $(TARGET).mm
-	$(WRAPPER) clang++ $(OPTS) $(FRAMEWORKS) $(LIBS) $(TARGET).mm -o $(TARGET)
 
 run: $(TARGET)
 	./$(TARGET)
 
-bundle: $(TARGET)
-	mkdir -p physdash.app/Contents
-	mkdir -p physdash.app/Contents/MacOS
-	mkdir -p physdash.app/Contents/Resources
-	cp Info.plist physdash.app/Contents
-	cp Icon.icns physdash.app/Contents/Resources
-	cp $(TARGET) physdash.app/Contents/MacOS
+$(TARGET).app: $(TARGET) Info.plist Icon.icns
+	mkdir -p $(TARGET).app/Contents/MacOS
+	mkdir -p $(TARGET).app/Contents/Resources
+	cp Info.plist $(TARGET).app/Contents
+	cp Icon.icns $(TARGET).app/Contents/Resources
+	cp $(TARGET) $(TARGET).app/Contents/MacOS
 
 .PHONY: clean
 clean:
 	$(RM) $(TARGET)
-	$(RM) -r physdash.app
+	$(RM) -r $(TARGET).app

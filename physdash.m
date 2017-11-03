@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
 #import <Webkit/WebKit.h>
-#import <iostream>
 
 #define DASHBOARD_URL "https://www.physcip.uni-stuttgart.de/physreg/"
 
