@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <Webkit/WebKit.h>
 
+// Make sure to keep the "/" at the end, otherwise the secure connection
+// will fail when executing the binary inside the Application Bundle
 #define DASHBOARD_URL "https://www.physcip.uni-stuttgart.de/physreg/"
 
 @interface Window_delegate : NSObject <NSWindowDelegate>

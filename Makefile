@@ -5,8 +5,8 @@ TARGET         := physdash
 all: $(TARGET).app
 	@echo "Compilation successful"
 
-run: $(TARGET)
-	./$(TARGET)
+run: $(TARGET).app
+	./$(TARGET).app/Contents/MacOS/$(TARGET)
 
 $(TARGET).app: $(TARGET) Info.plist Icon.icns
 	mkdir -p $(TARGET).app/Contents/MacOS
