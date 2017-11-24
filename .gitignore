@@ -1,3 +1,4 @@
 *.app
 physdash
 .DS_Store
+*.dmg

@@ -15,7 +15,11 @@ $(TARGET).app: $(TARGET) Info.plist Icon.icns
 	cp Icon.icns $(TARGET).app/Contents/Resources
 	cp $(TARGET) $(TARGET).app/Contents/MacOS
 
+dmg: $(TARGET).app
+	hdiutil create -volname $(TARGET) -srcfolder $(TARGET).app -ov -format UDZO $(TARGET)
+
 .PHONY: clean
 clean:
 	$(RM) $(TARGET)
 	$(RM) -r $(TARGET).app
+	$(RM) $(TARGET).dmg

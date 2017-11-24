@@ -3,9 +3,10 @@
 
 ## Compilation
 `physdashclient` can be compiled on any macOS device without any special requirements (apart from the usual development setup with an Objective-C compiler).
-* Use `make` to compile `physdashclient`. This also creates the `physdash.app` Application Bundle to be deployed on all computer lab machines.
+* Use `make` to compile `physdashclient`. This also creates the `physdash.app` Application Bundle.
 * Use `make run` to compile and run `physdashclient`
 * Use `make clean` to remove the binary and bundle files
+* Use `make dmg` to create the `physdash.dmg` file to be deployed on all computer lab machines.
 
 ## Attribution
 * This code is based on [Edgar Aroutiounian's Objective C++ WebKit Browser](http://hyegar.com/2016/02/26/lets-make-a-browser/) released under CC BY-NC-4.0.
