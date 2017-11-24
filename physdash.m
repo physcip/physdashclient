@@ -3,7 +3,7 @@
 
 // Make sure to keep the "/" at the end, otherwise the secure connection
 // will fail when executing the binary inside the Application Bundle
-#define DASHBOARD_URL "https://www.physcip.uni-stuttgart.de/physreg/"
+#define DASHBOARD_URL "https://www.physcip.uni-stuttgart.de/physdash/"
 
 @interface Window_delegate : NSObject <NSWindowDelegate>
 @end
